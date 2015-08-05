@@ -12,3 +12,9 @@ elec <- cbind(timect,elec[,3:9])
 names(elec)[1] = "Date&Time"
 rm(list = c("fullelec","Day1","Day2", "Want", "timelt", "timect"))
 
+png("plot1.png", 480, 480)
+par(cex.axis = 0.6)
+hist(elec$Global_active_power, col="red", breaks = 12, ylim = c(0, 1200),
+     main = "Global Active Power", ylab = "Frequency", 
+     xlab = "Global Active Power (kilowatts)")
+dev.off()
